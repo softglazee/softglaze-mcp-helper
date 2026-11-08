@@ -1,0 +1,7 @@
+node_modules/
+*.tgz
+.env
+mcp-connection.json
+key.pem
+*.pem
+.mcpregistry_*

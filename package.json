@@ -1,0 +1,48 @@
+{
+  "name": "softglaze-browser-mcp",
+  "version": "1.0.0",
+  "description": "Connects AI apps that start MCP servers as a local command to SoftGlaze Browser's built-in MCP server on this computer.",
+  "mcpName": "com.softglaze/browser",
+  "type": "module",
+  "bin": {
+    "softglaze-browser-mcp": "bin/softglaze-browser-mcp.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/helper.test.js",
+    "registry:check": "node test/check-server-json.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "keywords": [
+    "softglaze",
+    "mcp",
+    "model-context-protocol",
+    "browser-profiles",
+    "proxies"
+  ],
+  "homepage": "https://browser.softglaze.com/docs/ai-agents",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softglazee/softglaze-mcp-helper.git"
+  },
+  "bugs": {
+    "url": "https://browser.softglaze.com/support"
+  },
+  "author": "SoftGlaze <support@softglaze.com> (https://browser.softglaze.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1"
+  }
+}

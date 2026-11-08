@@ -1,0 +1,47 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.softglaze/browser",
+  "title": "SoftGlaze Browser",
+  "description": "Manage SoftGlaze Browser profiles, proxies and macros on your PC. Every change asks you first.",
+  "version": "1.0.0",
+  "websiteUrl": "https://browser.softglaze.com/features/ai-agents",
+  "repository": {
+    "url": "https://github.com/softglazee/softglaze-mcp-helper",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://browser.softglaze.com/icons/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "softglaze-browser-mcp",
+      "version": "1.0.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "SOFTGLAZE_TOKEN",
+          "description": "SoftGlaze AI token (sgai_...) from the SoftGlaze AI page, Tokens tab, in SoftGlaze Browser 1.0.22 or newer.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "SOFTGLAZE_PORT",
+          "description": "Port shown on the SoftGlaze AI page (8080 unless the Owner changed it).",
+          "isRequired": false,
+          "format": "number",
+          "default": "8080"
+        }
+      ]
+    }
+  ]
+}
