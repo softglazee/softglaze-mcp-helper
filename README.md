@@ -99,11 +99,18 @@ accepted it.
 
 ```
 npm install
-npm test                 # 10 tests: the SDK client over stdio, against test/mock-softglaze.js
+npm test                 # 11 tests: the SDK client over stdio against test/mock-softglaze.js, and the Glama build check
 npm run registry:check   # server.json files against the registry schema and publish rules
 ```
 
-Publishing steps: `PUBLISHING.md`.
+Tests also run in GitHub Actions on Node 18, 20 and 22. Publishing steps: `PUBLISHING.md`.
+
+**Glama build check.** Glama's automated checks run `glama/run.cjs`: it starts `glama/stand-in.cjs`, a stand-in
+for SoftGlaze Browser's endpoint that answers with the app's real tool definitions (`glama/tools.json`,
+exported from the app's tool registry) and refuses every tool call with "install SoftGlaze Browser", then
+runs this helper against it. Real users never run these files, and they are not in the npm package.
+
+The same bridge for Claude Code, with Claude plugins and skills: https://github.com/softglazee/softglaze-claude-plugin
 
 ## License
 
