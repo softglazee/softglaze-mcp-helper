@@ -14,7 +14,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --test test/helper.test.js",
+    "test": "node --test test/helper.test.js test/glama.test.cjs",
     "registry:check": "node test/check-server-json.js"
   },
   "engines": {
