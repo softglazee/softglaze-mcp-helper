@@ -8,13 +8,13 @@ Nothing here has been published. Checked on 9 Nov 2026:
   (`npm run registry:check`, schema 2025-12-11 vendored in `registry/schema/`) and
   `mcp-publisher validate` (v1.8.8, which checks against registry.modelcontextprotocol.io).
 
-## Decision first: the registry name
+## Registry name (decided 10 Nov 2026)
 
-`server.json` uses **`com.softglaze/browser`**, and `package.json` carries the same value in `mcpName`
-(the registry checks that they match on the published npm package). A `com.softglaze/...` name needs
-proof that you control softglaze.com (a DNS TXT record). If you prefer GitHub login instead, change
-both to `io.github.softglazee/softglaze-browser` **before** `npm publish`, because `mcpName` is fixed
-inside each published npm version.
+`server.json` uses **`io.github.softglazee/softglaze-browser-mcp`**, and `package.json` carries the same
+value in `mcpName` (the registry checks that they match on the published npm package; `mcpName` is
+fixed inside each published npm version). An `io.github.softglazee/...` name is proved by
+`mcp-publisher login github`, so no DNS record is needed. (The earlier draft used `com.softglaze/browser`,
+which needs a DNS TXT record on softglaze.com; the DNS steps below stay for the Proxy Bridge draft.)
 
 ## 1. GitHub
 
@@ -30,7 +30,7 @@ npm whoami
 npm test
 npm pack --dry-run        # expect: bin/, lib/, README.md, LICENSE, package.json only
 npm publish --access public
-npm view softglaze-browser-mcp version mcpName   # 1.0.0  com.softglaze/browser
+npm view softglaze-browser-mcp version mcpName   # 1.0.0  io.github.softglazee/softglaze-browser-mcp
 ```
 
 ## 3. Install mcp-publisher (Windows PowerShell, from the registry quickstart)
@@ -73,17 +73,17 @@ github.com/login/device.
 ```
 mcp-publisher validate server.json
 mcp-publisher publish server.json
-curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=com.softglaze/browser"
+curl "https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.softglazee"
 ```
 
 Each version is permanent: for a change, raise `version` in `package.json` and `server.json`, publish
 to npm, then `mcp-publisher publish` again. To withdraw a version:
-`mcp-publisher status --status deprecated com.softglaze/browser 1.0.0`.
+`mcp-publisher status --status deprecated io.github.softglazee/softglaze-browser-mcp 1.0.0`.
 
 ## 6. After the registry
 
 - **VS Code / GitHub Copilot**: VS Code opens a registry entry with
-  `vscode:mcp/by-name/com.softglaze/browser`. The GitHub MCP Registry (github.com/mcp) is a curated
+  `vscode:mcp/by-name/io.github.softglazee/softglaze-browser-mcp`. The GitHub MCP Registry (github.com/mcp) is a curated
   list; GitHub's latest note (Oct 2025) says to email partnerships@github.com after publishing to the
   official registry to ask for inclusion.
 - **Cursor**: an "Add to Cursor" link is
