@@ -2,7 +2,7 @@
   "name": "softglaze-browser-mcp",
   "version": "1.0.0",
   "description": "Connects AI apps that start MCP servers as a local command to SoftGlaze Browser's built-in MCP server on this computer.",
-  "mcpName": "com.softglaze/browser",
+  "mcpName": "io.github.softglazee/softglaze-browser-mcp",
   "type": "module",
   "bin": {
     "softglaze-browser-mcp": "bin/softglaze-browser-mcp.js"
