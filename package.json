@@ -1,7 +1,7 @@
 {
   "name": "softglaze-browser-mcp",
-  "version": "1.0.0",
-  "description": "Connects AI apps that start MCP servers as a local command to SoftGlaze Browser's built-in MCP server on this computer.",
+  "version": "1.0.1",
+  "description": "Bridge from AI apps (Claude, Cursor, VS Code) to SoftGlaze Browser's built-in MCP server: run isolated Windows browser profiles, each with its own cookies, proxy and fingerprint.",
   "mcpName": "io.github.softglazee/softglaze-browser-mcp",
   "type": "module",
   "bin": {
@@ -27,9 +27,19 @@
   "keywords": [
     "softglaze",
     "mcp",
+    "mcp-server",
     "model-context-protocol",
+    "browser-automation",
     "browser-profiles",
-    "proxies"
+    "multi-profile-browser",
+    "proxy",
+    "cookies",
+    "playwright",
+    "puppeteer",
+    "ai-agents",
+    "claude",
+    "cursor",
+    "windows"
   ],
   "homepage": "https://browser.softglaze.com/docs/ai-agents",
   "repository": {

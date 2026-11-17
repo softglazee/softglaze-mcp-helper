@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.softglazee/softglaze-browser-mcp",
   "title": "SoftGlaze Browser",
-  "description": "Manage SoftGlaze Browser profiles, proxies and macros on your PC. Every change asks you first.",
-  "version": "1.0.0",
+  "description": "AI apps run SoftGlaze Browser profiles, each with its own cookies and proxy. You approve changes.",
+  "version": "1.0.1",
   "websiteUrl": "https://browser.softglaze.com/features/ai-agents",
   "repository": {
     "url": "https://github.com/softglazee/softglaze-mcp-helper",
@@ -21,7 +21,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "softglaze-browser-mcp",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"

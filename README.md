@@ -9,8 +9,13 @@ connect to that address directly with an `Authorization` header; the SoftGlaze A
 setup for each. Use this package when your app only runs local commands, or when you install
 SoftGlaze from an MCP registry.
 
-Every change an AI app asks for still waits for your approval in SoftGlaze, and **Stop all AI** in the
-app cuts every AI app off at once.
+Each browser profile keeps its own cookies, storage, proxy and fingerprint, so an AI app works inside real,
+separate profiles.
+
+Changes an AI app asks for need your approval in SoftGlaze. By default the app asks once an hour per kind of
+action (Allow once, Allow for 1 hour, Deny), and you can set it to ask every time. Read-only tools don't ask
+unless you want them to. **Stop all AI** in the app cuts every AI app off at once. The full rules:
+https://browser.softglaze.com/features/ai-approvals
 
 ## Before you start
 
@@ -29,7 +34,7 @@ The token goes in `SOFTGLAZE_TOKEN`. Set `SOFTGLAZE_PORT` only if the port is no
   "mcpServers": {
     "softglaze": {
       "command": "npx",
-      "args": ["-y", "softglaze-browser-mcp@1.0.0"],
+      "args": ["-y", "softglaze-browser-mcp@1.0.1"],
       "env": { "SOFTGLAZE_TOKEN": "<YOUR_TOKEN>" }
     }
   }
@@ -49,7 +54,7 @@ The token goes in `SOFTGLAZE_TOKEN`. Set `SOFTGLAZE_PORT` only if the port is no
     "softglaze": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "softglaze-browser-mcp@1.0.0"],
+      "args": ["-y", "softglaze-browser-mcp@1.0.1"],
       "env": { "SOFTGLAZE_TOKEN": "${input:softglaze-token}" }
     }
   }
@@ -78,7 +83,7 @@ Order used: `SOFTGLAZE_MCP_URL`, then `SOFTGLAZE_PORT`, then the file's `url`, t
 ## Check the connection
 
 ```
-npx -y softglaze-browser-mcp@1.0.0 --check
+npx -y softglaze-browser-mcp@1.0.1 --check
 ```
 
 prints the address it uses, where the token came from (first characters only), and whether SoftGlaze
